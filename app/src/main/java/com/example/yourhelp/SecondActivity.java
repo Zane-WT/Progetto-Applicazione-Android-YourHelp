@@ -41,26 +41,29 @@ public class SecondActivity extends AppCompatActivity {
             String Email = textEmail.getText().toString().trim();
             String Password = textPassword.getText().toString().trim();
 
-            if(Email != "" || Password != "")
-            {
-                auth.createUserWithEmailAndPassword(Email, Password)
-                        .addOnCompleteListener(task ->
-                        {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(this, "Utente creato!", Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(this, "Errore:1 " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        });
-            }else if (Email == "" || Password == "") {
-                Toast.makeText(this, "Inserire un indirizzo email e una password", Toast.LENGTH_LONG).show();
+            if (Email.isEmpty() && Password.isEmpty()) {
+                Toast.makeText(this, "Inserire email e password", Toast.LENGTH_LONG).show();
+                return;
             }
-            else if (Email == "") {
+
+            if (Email.isEmpty()) {
                 Toast.makeText(this, "Inserire un indirizzo email", Toast.LENGTH_LONG).show();
+                return;
             }
-            else if (Password == "") {
+
+            if (Password.isEmpty()) {
                 Toast.makeText(this, "Inserire una password", Toast.LENGTH_LONG).show();
+                return;
             }
+
+            auth.createUserWithEmailAndPassword(Email, Password)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(this, "Utente creato!", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(this, "Errore: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
         });
 
         sendButton.setOnClickListener(e ->
