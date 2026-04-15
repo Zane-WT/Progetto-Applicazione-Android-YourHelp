@@ -1,36 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    android:background="#CDEBFF">
 
+    <!-- LOGO -->
+
+    <!-- TITOLO YourHelp -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="263dp"
+        android:layout_height="248dp"
+        android:layout_marginBottom="24dp"
+        android:src="@mipmap/ic_launcher_foreground" />
+
+    <!-- SOTTOTITOLO -->
     <TextView
-
-        android:id="@+id/textview"
-        android:layout_width="83dp"
-        android:layout_height="46dp"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522" />
-
-    <Button
-        android:id="@+id/button1"
+        android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Avanti"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="YourHelp"
+        android:textColor="@android:color/black"
+        android:textSize="42sp"
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/subtitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="La tua nuova comfort zone\nUn luogo dove poter aiutare se stessi e gli altri"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="40dp" />
+
+    <!-- BOTTONE INIZIAMO -->
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Iniziamo!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#1A73E8"
+        android:layout_marginTop="20dp"
+        android:elevation="4dp" />
+
+</LinearLayout>

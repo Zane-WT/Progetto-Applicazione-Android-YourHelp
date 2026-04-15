@@ -2,6 +2,7 @@ package com.example.yourhelp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,6 +62,7 @@ public class SecondActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(this, "Utente creato!", Toast.LENGTH_LONG).show();
                         } else {
+                            Log.e("FIREBASE_ERROR", task.getException().getMessage());
                             Toast.makeText(this, "Errore: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
                     });
