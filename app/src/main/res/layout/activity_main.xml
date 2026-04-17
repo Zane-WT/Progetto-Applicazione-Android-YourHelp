@@ -14,37 +14,37 @@
     <!-- TITOLO YourHelp -->
     <ImageView
         android:id="@+id/logoImage"
-        android:layout_width="263dp"
-        android:layout_height="248dp"
-        android:layout_marginBottom="24dp"
-        android:src="@mipmap/ic_launcher_foreground" />
+        android:layout_width="449dp"
+        android:layout_height="451dp"
+        android:src="@drawable/logoscritta" />
 
     <!-- SOTTOTITOLO -->
     <TextView
         android:id="@+id/titleText"
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:fontFamily="sans-serif-medium"
-        android:text="YourHelp"
+        android:text=" La tua nuova comfort zone"
         android:textColor="@android:color/black"
-        android:textSize="42sp"
-        android:textStyle="bold" />
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:layout_marginTop="-60dp"/>
 
     <TextView
         android:id="@+id/subtitleText"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="La tua nuova comfort zone\nUn luogo dove poter aiutare se stessi e gli altri"
-        android:textSize="18sp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
+        android:text="Un luogo dove poter aiutare se stessi e gli altri"
         android:textColor="@android:color/black"
-        android:layout_marginBottom="40dp" />
+        android:textSize="19sp" />
 
     <!-- BOTTONE INIZIAMO -->
     <Button
         android:id="@+id/startButton"
-        android:layout_width="match_parent"
+        android:layout_width="280dp"
         android:layout_height="55dp"
         android:text="Iniziamo!"
         android:textSize="20sp"
