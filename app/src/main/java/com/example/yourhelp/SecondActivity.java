@@ -70,23 +70,18 @@ public class SecondActivity extends AppCompatActivity {
 
         sendButton.setOnClickListener(e ->
         {
-                FirebaseUser user = auth.getCurrentUser();
-                if (user != null) {
-                    user.sendEmailVerification()
-                            .addOnCompleteListener(task ->
-                            {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(this, "Email mandata!", Toast.LENGTH_LONG).show();
-                                } else {
-                                    Toast.makeText(this, "Errore:2 " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                                }
-                            });
-                }
+            FirebaseUser user = auth.getCurrentUser();
+            if (user != null) {
+                user.sendEmailVerification()
+                        .addOnCompleteListener(task ->
+                        {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(this, "Email mandata!", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(this, "Errore:2 " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+            }
         });
-
-
-
-
-
     }
 }
