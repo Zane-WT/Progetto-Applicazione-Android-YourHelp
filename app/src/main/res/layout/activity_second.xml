@@ -15,22 +15,11 @@
         <!-- LOGO -->
         <ImageView
             android:id="@+id/logoImage"
-            android:layout_width="138dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="16dp"
-            android:src="@mipmap/ic_launcher_foreground" />
+            android:layout_width="335dp"
+            android:layout_height="239dp"
+            android:src="@drawable/logoscritta" />
 
         <!-- TITOLO -->
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="YourHelp"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:textColor="#1A73E8"
-            android:layout_marginBottom="30dp" />
 
         <!-- ACCEDI -->
         <TextView
@@ -41,37 +30,38 @@
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#000000"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="-30dp"/>
 
         <!-- USERNAME / EMAIL -->
         <EditText
             android:id="@+id/textEmail"
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="55dp"
             android:hint="Username / Email"
             android:padding="12dp"
-            android:background="@android:drawable/edit_text"
             android:textColor="#000000"
-            android:textColorHint="#777777"
-            android:layout_marginBottom="16dp" />
+            android:textColorHint="#000000"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_edittext"/>
 
         <!-- PASSWORD -->
         <EditText
             android:id="@+id/textPassword"
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="55dp"
             android:hint="Password"
             android:padding="12dp"
-            android:background="@android:drawable/edit_text"
             android:inputType="textPassword"
             android:textColor="#000000"
-            android:textColorHint="#777777"
-            android:layout_marginBottom="24dp" />
+            android:textColorHint="#000000"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/rounded_edittext"/>/>
 
         <!-- BOTTONE ENTRA -->
         <Button
             android:id="@+id/sendButton"
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Entra"
             android:textSize="20sp"
@@ -86,15 +76,25 @@
             android:id="@+id/registerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Non hai un account? Registrati qui"
+            android:text="Non hai un account?"
             android:textSize="16sp"
             android:textColor="#000000"
+            android:layout_marginBottom="0dp" />
+
+        <TextView
+            android:id="@+id/linkRegisterText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrati qui"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#00BCD4"
             android:layout_marginBottom="40dp" />
 
         <!-- BOTTONE INVIA EMAIL VERIFICA (se vuoi tenerlo) -->
         <Button
             android:id="@+id/verifybutton"
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Invia Email di Verifica"
             android:textSize="16sp"
