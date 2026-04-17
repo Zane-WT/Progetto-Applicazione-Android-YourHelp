@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Colore di sfondo dell'EditText -->
+    <solid android:color="#FFFFFF" />
+
+    <!-- Raggio degli angoli: più alto è il valore, più arrotondati saranno -->
+    <corners android:radius="20dp" />
+
+    <!-- Bordo (opzionale): spessore e colore -->
+    <stroke
+        android:width="2dp"
+        android:color="#00BCD4" />
+</shape>
