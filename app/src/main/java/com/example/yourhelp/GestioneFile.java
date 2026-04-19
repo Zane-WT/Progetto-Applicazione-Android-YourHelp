@@ -1,6 +1,7 @@
+package com.example.yourhelp;
+
 import android.annotation.SuppressLint;
 
-import com.example.yourhelp.Utente;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
