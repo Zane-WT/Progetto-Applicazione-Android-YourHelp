@@ -1,11 +1,13 @@
-import com.example.yourhelp.Utente;
+import android.annotation.SuppressLint;
 
+import com.example.yourhelp.Utente;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class GestioneFile {
@@ -28,6 +30,7 @@ public class GestioneFile {
         return true;
     }
 
+    @SuppressLint("NewApi")
     public ArrayList<Utente> salva_utenti()
     {
         if(obj.exists())
@@ -38,10 +41,11 @@ public class GestioneFile {
                 while((line=bw.readLine()) != null)
                 {
                     String[] arr = line.split(";");
-                    lista.add(new Utente(arr[0],arr[1],arr[2],arr[3]));
+                    String[] nascita = arr[5].split("-");
+                lista.add(new Utente(arr[0],arr[1],arr[2],arr[3],arr[4],LocalDate.of(Integer.parseInt(nascita[0]),Integer.parseInt(nascita[1]),Integer.parseInt(nascita[2]))));
                 }
-            } catch (IOException e) {
-                System.out.println("Error" + e.getMessage());
+            } catch (IOException exception) {
+                System.out.println("Error" + exception.getMessage());
             }
         }
         else
@@ -62,9 +66,10 @@ public class GestioneFile {
                 bw.write(e.toCsv());
             }catch (IOException exception)
             {
-                System.out.println("File non esistente");
+                System.out.println("Error" + exception.getMessage());
             }
         }else {
+            System.out.println("File non esistente");
             return;
         }
     }
