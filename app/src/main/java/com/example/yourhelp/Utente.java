@@ -1,16 +1,22 @@
 package com.example.yourhelp;
 
+import java.time.LocalDate;
+
 public class Utente {
     private String nome;
-    private String cognome;
+    private String username;
     private String email;
     private String password;
+    private String genere;
+    private LocalDate dataNascita;
 
-    public Utente(String nome, String cognome, String email, String password) {
+    public Utente(String nome, String username, String email, String password, String genere, LocalDate dataNascita) {
         this.nome = nome;
-        this.cognome = cognome;
+        this.username = username;
         this.email = email;
         this.password = password;
+        this.genere = genere;
+        this.dataNascita = dataNascita;
     }
 
 
@@ -22,12 +28,12 @@ public class Utente {
         this.nome = nome;
     }
 
-    public String getCognome() {
-        return cognome;
+    public String getUsername() {
+        return username;
     }
 
-    protected void setCognome(String cognome) {
-        this.cognome = cognome;
+    protected void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -46,14 +52,27 @@ public class Utente {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "Nome:" + nome + "\n" + "Cognome:" + cognome +
-                "\n" + "Email:" + email + "\n" + "Password:" + password;
+    public String getGenere() {
+        return genere;
+    }
+    protected void setGenere(String genere) {
+        this.genere = genere;
     }
 
+    public LocalDate getDataNascita() {
+        return dataNascita;
+    }
 
+    protected void setDataNascita(LocalDate dataNascita) {
+        this.dataNascita = dataNascita;
+    }
+
+    @Override
+    public String toString() {
+        return "Nome:" + nome + "\n" + "Cognome:" + username +
+                "\n" + "Email:" + email + "\n" + "Password:" + password;
+    }
     public String toCsv() {
-        return nome+";"+cognome+";"+email+";"+password;
+        return nome+";"+ username +";"+email+";"+password+""+genere+""+dataNascita;
     }
 }
