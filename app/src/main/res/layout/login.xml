@@ -60,7 +60,7 @@
 
         <!-- BOTTONE ENTRA -->
         <Button
-            android:id="@+id/sendButton"
+            android:id="@+id/verifybutton"
             android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Entra"
@@ -93,7 +93,7 @@
 
         <!-- BOTTONE INVIA EMAIL VERIFICA (se vuoi tenerlo) -->
         <Button
-            android:id="@+id/verifybutton"
+            android:id="@+id/sendButton"
             android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Invia Email di Verifica"
