@@ -12,10 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YourHelp">
         <activity
-            android:name=".SecondActivity"
+            android:name=".SignUp"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LogIn"
+            android:exported="false" />
+        <activity
+            android:name=".Welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
