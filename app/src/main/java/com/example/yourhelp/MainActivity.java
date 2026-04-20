@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intento = new Intent(MainActivity.this,SecondActivity.class);
-                intento.putExtra("Chiave_Messaggio","Ciao dalla prima finestra");
                 startActivity(intento);
+                finish();
             }
         });
     }
