@@ -73,6 +73,6 @@ public class Utente {
                 "\n" + "Email:" + email + "\n" + "Password:" + password;
     }
     public String toCsv() {
-        return nome+";"+ username +";"+email+";"+password+""+genere+""+dataNascita;
+        return nome+";"+ username +";"+email+";"+password+";"+genere+";"+dataNascita;
     }
 }
