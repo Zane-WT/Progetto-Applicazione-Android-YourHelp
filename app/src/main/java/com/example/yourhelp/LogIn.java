@@ -1,5 +1,6 @@
 package com.example.yourhelp;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,8 +34,7 @@ public class SecondActivity extends AppCompatActivity {
             return insets;
         });
         GestioneCSV gest = new GestioneCSV();
-        File obj = new File("C:\\Users\\Zane\\Documents\\Scuola\\YourHelp\\app\\src\\main\\assets\\credenziali.txt");
-        gest.caricaUtenti(obj);
+        //File obj = new File("C:\\Users\\Zane\\Documents\\Scuola\\YourHelp\\app\\src\\main\\assets\\credenziali.txt");
         Button sendButton = findViewById(R.id.sendButton);
         Button verifyButton = findViewById(R.id.verifybutton);
         EditText textEmail = findViewById(R.id.textEmail);
@@ -44,29 +44,32 @@ public class SecondActivity extends AppCompatActivity {
 
         verifyButton.setOnClickListener(e->
         {
-            String EmailOrUsername = textEmail.getText().toString().trim();
-            String Password = textPassword.getText().toString().trim();
+            String EmailOrUsername = textEmail.getText().toString();
+            String Password = textPassword.getText().toString();
 
             if (EmailOrUsername.isEmpty() && Password.isEmpty()) {
-                Toast.makeText(this, "Inserire email e password", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Inserire email e password", Toast.LENGTH_SHORT).show();
                 return;
             }
-
             if (EmailOrUsername.isEmpty()) {
-                Toast.makeText(this, "Inserire un indirizzo email", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Inserire un indirizzo email", Toast.LENGTH_SHORT).show();
                 return;
             }
-
             if (Password.isEmpty()) {
-                Toast.makeText(this, "Inserire una password", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Inserire una password", Toast.LENGTH_SHORT).show();
                 return;
             }
 
+            Utente trovato = gest.controlloCredenziali(EmailOrUsername,Password);
             if(gest.controlloCredenziali(EmailOrUsername,Password)==null)
             {
-                Toast.makeText(this, "Credenziali errate", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Credenziali errate", Toast.LENGTH_SHORT).show();
                 return;
             }
+
+            Intent intento = new Intent(SecondActivity.this,MainActivity.class);
+            startActivity(intento);
+            finish();
 
 
             /*auth.createUserWithEmailAndPassword(Email, Password)
@@ -82,7 +85,7 @@ public class SecondActivity extends AppCompatActivity {
 
         sendButton.setOnClickListener(e ->
         {
-            FirebaseUser user = auth.getCurrentUser();
+            /*FirebaseUser user = auth.getCurrentUser();
             if (user != null) {
                 user.sendEmailVerification()
                         .addOnCompleteListener(task ->
@@ -93,7 +96,7 @@ public class SecondActivity extends AppCompatActivity {
                                 Toast.makeText(this, "Errore:2 " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             }
                         });
-            }
+            }*/
         });
     }
 }
