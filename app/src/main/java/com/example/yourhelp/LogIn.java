@@ -20,14 +20,14 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.io.File;
 
-public class SecondActivity extends AppCompatActivity {
+public class LogIn extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -67,7 +67,7 @@ public class SecondActivity extends AppCompatActivity {
                 return;
             }
 
-            Intent intento = new Intent(SecondActivity.this,MainActivity.class);
+            Intent intento = new Intent(LogIn.this,MainActivity.class);
             startActivity(intento);
             finish();
 
